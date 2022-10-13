@@ -1,0 +1,47 @@
+.nav-bg{
+    /* fallback for old browsers */
+    background: #fbc2eb;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to left, rgba(251, 194, 235, 1), #da95f0, rgba(166, 193, 238, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to left, rgba(251, 194, 235, 0.8), #da95f0, rgba(166, 193, 238, 0.8))
+    /* background: linear-gradient(to left, rgba(220, 151, 260, 0.9), 
+                                rgba(230, 149, 240, 0.9),
+                                rgba(190, 160, 241, 0.9)) */
+
+}
+
+.choose-table{
+    display: none;
+}
+
+.table-subtitle{
+    color:#1F8A58;
+
+}
+
+.product{
+    border:none !important;
+}
+.product img{
+    height: 150px;
+    width: auto;
+    margin-bottom: -50px;
+    margin-left: 1rem;
+    transition: 0.5s;
+}
+.product:hover img{
+    transform: scale(1.05) rotate(-10deg);
+}
+.product .card-title{
+    margin-top: 50px;
+}
+
+.img-in-cart{
+    height: 50px;
+}
+.overflow-scroll{
+    overflow: scroll;
+}
