@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Desk;
 use App\Models\Menu;
+use App\Models\Stack;
 // use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -36,6 +37,7 @@ class HomeController extends Controller
             'dataLists' => Desk::paginate(),
             'menuLists' => Menu::latest()->get(),
             'currentStack' => $currentStack,
+            'stacks' => Stack::select('desk_id')->get(),
         ]);
     }
 }

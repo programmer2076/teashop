@@ -21,25 +21,6 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-// Route::group(['prefix'=>'backend', 'namespace'=>'Backend' ,'middleware'=>['manager', 'auth', 'verified']],function(){
-//     Route::get('/', [BaseController::class, 'index'])->name('backend');
-
-//     Route::get('/users', [UserController::class, 'index'])->name('user');
-//     Route::get('/users/edit/{user}', [UserController::class, 'edit'])->name('user.edit');
-//     Route::post('/users/edit/{user}', [UserController::class, 'update'])->name('user.update');
-//     Route::get('/users/delete/{user}', [UserController::class, 'delete'])->name('user.delete');
-//     Route::get('/users/destroy/{user}', [UserController::class, 'destroy'])->name('user.destroy');
-
-//     Route::get('/roles', [RoleController::class, 'index'])->name('role');
-//     Route::get('/roles/create', [RoleController::class, 'create'])->name('role.create');
-//     Route::post('/roles/create', [RoleController::class, 'store'])->name('role.store');
-//     Route::get('/roles/edit/{role}', [RoleController::class, 'edit'])->name('role.edit');
-//     Route::post('/roles/edit/{role}', [RoleController::class, 'update'])->name('role.update');
-//     Route::get('/roles/delete/{role}', [RoleController::class, 'delete'])->name('role.delete');
-//     Route::get('/roles/destroy/{role}', [RoleController::class, 'destroy'])->name('role.destroy');
-
-// });
 Route::group(['namespace'=>'App\Http\Controllers', 'middleware'=>['auth']], function(){
     // Route::get('/table', ['uses' => 'DeskController@index'])->name('table');
     // Route::get('/table/create', ['uses' => 'DeskController@create'])->name('table.create');

@@ -200,61 +200,6 @@
 
     }
 
-    function removeTable(id){
-        var url = window.location.href;
-        
-        const data = { 
-            "_token": "{{ csrf_token() }}",
-            "id": id };
-            
-        fetch('/tables/remove', {
-        method: 'get', // or 'PUT'
-        headers: {
-            'Accept': 'application/json',
-        },
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log('Success:', data)
-            if(data.status == 201){
-                const token = data.token
-                const rId = data.data.desk_id
-                // document.getElementById(rId).classList.add("disabled")
-                document.getElementById("table"+rId).style.border='1px solid red'
-                document.getElementById("subtitle"+rId).innerHTML="Selected"
-                document.getElementById("subtitle"+rId).classList.add("text-muted")
-                // document.getElementById('subtitle'+1)innerHTML='Not Avaliable';
-                // document.getElementById(`subtitle${id}`).style.color='red';
-                
-                 // Swatch tableBody's select Element
-                const tableBody = document.getElementById("tableBody"+rId);
-                tableBody.removeChild(tableBody.lastElementChild);
-                
-
-                // Add Remove Element to tableBody
-                const node = document.createElement("a")
-                const textnode = document.createTextNode("Remove")
-                node.appendChild(textnode)
-                node.classList.add("btn", "btn-sm", "btn-danger", "choose-table", "position-absolute",
-                "top-50", "start-50", "translate-middle")
-                // node.setAttribute("id" "d")
-                // node.setAttribute("id" "shit")
-                node.setAttribute("onclick", `removeTable(${rId})`)
-                node.setAttribute("id", `${rId}`)
-                // node.classList.add("btn btn-primary choose-table btn-sm position-absolute bottom-0 end-0")
-                // const textnode = document.createTextNode("Remove");
-                // node.appendChild(textnode);
-                document.getElementById("tableBody"+rId).appendChild(node)
-                // document.getElementById("swatchBox"+rId).innterHTML=nodeA
-
-               
-            }
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-
-    }
 
     function showSelect(id){
         document.getElementById(`${id}`).style.display='block';
